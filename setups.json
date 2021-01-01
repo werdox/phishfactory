@@ -1,0 +1,22 @@
+{
+    "0": {
+        "name": "Twitter: Password has Changed",
+        "subject": "Your Twitter password has been changed",
+        "template": "twitter/passwordChanged.html"
+    },
+    "1": {
+        "name": "Instagram: We Noticed a New Login",
+        "subject": "New login to Instagram from Chrome on Windows 10",
+        "template": "instagram/unknownLogin.html"
+    },
+    "2": {
+        "name": "Instagram: Password has Changed",
+        "subject": "Your Instagram password has been changed",
+        "template": "instagram/passwordChanged.html"
+    },
+    "3": {
+        "name": "StackOverflow: Account Recovery",
+        "subject": "Account Recovery - Stack Overflow",
+        "template": "stackoverflow/accountRecovery.html"
+    }
+}
