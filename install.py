@@ -74,7 +74,7 @@ json.dump(d, DATA_FILE)
 DATA_FILE.close()
 bufferSize = 64 * 1024
 pyAesCrypt.encryptFile(BASE + "/data.json", BASE + "/data.json.aes", KEY, bufferSize)
-os.system("rm -rf {0}".format(BASE + "data.json"))
+os.system("rm -rf {0}".format(BASE + "/data.json"))
 
 os.system("chmod ugo+rw {0}".format(BASE + "/config.json"))
 
