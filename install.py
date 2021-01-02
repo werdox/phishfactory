@@ -76,8 +76,6 @@ bufferSize = 64 * 1024
 pyAesCrypt.encryptFile(BASE + "/data.json", BASE + "/data.json.aes", KEY, bufferSize)
 os.system("rm -rf {0}".format(BASE + "/data.json"))
 
-os.system("chmod ugo+rw {0}".format(BASE + "/config.json"))
-
 print("creating command {0}...".format(CMD_PATH), end="")
 f = open(CMD_PATH, "w")
 f.write("""
@@ -90,5 +88,5 @@ f.close()
 print("done")
 
 print("executing: chmod ugo+x {0}...".format(CMD_PATH), end="")
-os.system("chmod ugo+x " + CMD_PATH)
+os.system("chmod +x " + CMD_PATH)
 print("done")
