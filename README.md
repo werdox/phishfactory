@@ -11,6 +11,9 @@ misuse of this program.
 
 It is **illegal** to attempt at phishing someone **without their consent**. 
 
+## Requirements ##
+- `pyAesCrypt==0.4.4`
+
 ## Features ##
 
 - Email attachment(s)
@@ -35,6 +38,7 @@ and a specific **HTML email template**
 
 - `git clone https://github.com/werdox/phishfactory`
 - `cd phishfactory`
+- `pip3 install -r requirements.txt`
 - `sudo python3 install.py`
 - `sudo phishfactory`
 - __`enjoy`__
