@@ -49,6 +49,8 @@ or vulnerable to phishing, while including the link
 https://yourhost.ngrok.io, but the email received is automatically
 marked as important.
 
+However, emails containing any _bit.ly_ link were immediately marked as a potential phishing attack.
+
 ![demo](demo/mail.png)
 
 ![demo](demo/inbox.png)
