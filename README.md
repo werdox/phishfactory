@@ -45,9 +45,8 @@ and a specific **HTML email template**
 
 # Demonstration #
 Not only does Google Mail not recognise this phishing email as spam
-or vulnerable to phishing, while including the link 
-https://yourhost.ngrok.io, but the email received is automatically
-marked as important.
+or vulnerable to phishing, while including the link
+https://yourhost.ngrok.io (a platform which allows you to connect "publish" your a server in your localhost, useful for phishing, and used in other phishing tools), but the email received is automatically marked as important.
 
 However, emails containing any _bit.ly_ link were immediately marked as a potential phishing attack.
 
