@@ -1,3 +1,12 @@
+# Contents #
+
+1. [About](#about)
+2. [Disclaimer](#disclaimer)
+3. [Requirements](#requirements)
+4. [Features](#features)
+5. [Demonstration](#demonstration)
+6. [Installation](#installation)
+
 # About #
 
 **phishfactory** offers a variety of email templates for spear-phishing
@@ -34,6 +43,19 @@ and a specific **HTML email template**
     usefulness for spear-phishing
  
 
+# Demonstration #
+Not only does Google Mail not recognise this phishing email as spam
+or vulnerable to phishing, while including the link 
+https://yourhost.ngrok.io, but the email received is automatically
+marked as important.
+
+![demo](demo/mail.png)
+
+![demo](demo/inbox.png)
+
+#### How phishfactory looks in the command line ####
+![demo](demo/demo.png)
+
 # Installation #
 
 - `git clone https://github.com/werdox/phishfactory`
@@ -42,5 +64,3 @@ and a specific **HTML email template**
 - `sudo python3 install.py`
 - `sudo phishfactory`
 - __`enjoy`__
-
-![demo](demo.png)

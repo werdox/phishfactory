@@ -140,6 +140,8 @@ def update(dct):
     encrypt()
 
 
+os.system("clear")
+
 if not DATA["email"] and not DATA["alias"] and not DATA["password"]:
     flag = 1
     account = input(green(bold("Sender's email address (g-mail)")) + blue(bold("> ")))
