@@ -60,7 +60,7 @@ However, emails containing any _bit.ly_ link were immediately marked as a potent
 # Installation #
 
 ### Note ###
-Executing **phishfactory** and **install.py** as root is only required if **"install_dir"** located in **config.json** requires root access (by default **/usr/share** and if **"cmd_dir"** requires root access (by default **/usr/local/bin**).
+Executing **phishfactory** and **install.py** as root is only required if **"install_dir"** located in **config.json** requires root access (by default **/usr/share**) and if **"cmd_dir"** requires root access (by default **/usr/local/bin**).
 
 **config.json** can be modified to change the _command_ and _installation_ directory.
 
