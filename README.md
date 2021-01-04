@@ -64,9 +64,11 @@ Executing **phishfactory** and **install.py** as root is only required if **"ins
 
 **config.json** can be modified to change the _command_ and _installation_ directory.
 
-- `git clone https://github.com/werdox/phishfactory`
-- `cd phishfactory`
-- `pip3 install -r requirements.txt`
-- `sudo python3 install.py`
-- `sudo phishfactory`
-- __`enjoy`__
+~~~
+git clone https://github.com/werdox/phishfactory
+cd phishfactory
+pip3 install -r requirements.txt
+sudo python3 install.py
+sudo phishfactory
+enjoy
+~~~
