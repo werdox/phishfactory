@@ -17,6 +17,7 @@ import pyAesCrypt
 import json
 import smtplib
 import os
+import sys
 import getpass
 import re
 from email.mime.multipart import MIMEMultipart
@@ -69,9 +70,16 @@ if os.getuid() > 0:
     print(red(bold("Run as root :)")))
     exit()
 
-BASE = os.path.dirname(__file__)
+S = ""
 
-SETUP_FILE = open(BASE + "/setups.json", "r")
+if "linux" in sys.platform:
+    S = "/"
+elif "win" in sys.platform:
+    S = "\\"
+
+BASE = os.path.dirname(__file__) + S
+
+SETUP_FILE = open(BASE + "setups.json", "r")
 SETUP = json.load(SETUP_FILE)
 SETUP_FILE.close()
 
@@ -86,16 +94,16 @@ flag = 0
 
 
 def clean():
-    os.system("rm -rf {0}/data.json".format(BASE))
+    os.system("rm -rf {0}data.json".format(BASE))
 
 
-KEY_FILE = open(BASE + "/.key", "r")
+KEY_FILE = open(BASE + ".key", "r")
 KEY = KEY_FILE.read()
 KEY_FILE.close()
 
 bufferSize = 64 * 1024
-DATA_PATH = BASE + "/data.json"
-DATA_PATH_E = BASE + "/data.json.aes"
+DATA_PATH = BASE + "data.json"
+DATA_PATH_E = BASE + "data.json.aes"
 pyAesCrypt.decryptFile(DATA_PATH_E, DATA_PATH, KEY, bufferSize)
 DT = open(DATA_PATH, "r")
 DATA = json.load(DT)
@@ -188,8 +196,8 @@ if use_setup in "Yy":
     choice = str(valid_number("Setup number") - 1)
     if choice in setups:
         subject = SETUP[choice]["subject"]
-        html = open("{0}/templates/{1}".format(
-            BASE, SETUP[choice]["template"]
+        html = open("{0}templates{1}".format(
+            BASE, S + SETUP[choice]["template"]
         ), "r")
         html_body = html.read()
         html_body = placeholder_filler(html_body)
@@ -199,7 +207,7 @@ else:
     subject = input(green(bold("Subject")) + blue(bold("> ")))
     attachments = input(green(bold("Path to attachment(s) (use , to separate multiple files)")) + blue(bold("> ")))
     while True:
-        templates_dirs = os.popen("ls {0}/templates".format(BASE)).read().split("\n")[:-1]
+        templates_dirs = os.popen("ls {0}templates".format(BASE)).read().split("\n")[:-1]
         print(green(bold("HTML Templates")))
         counter = 1
         for td in templates_dirs:
@@ -209,7 +217,7 @@ else:
         section_number = valid_number("Template type number") - 1
 
         templates = os.popen(
-            "ls {0}/templates/{1}".format(BASE, templates_dirs[section_number])).read().split(
+            "ls {0}templates{1}".format(BASE, S + templates_dirs[section_number])).read().split(
             "\n")[:-1]
         counter = 1
 
@@ -222,8 +230,8 @@ else:
         template_number = valid_number("HTML template number") - 1
 
         try:
-            html = open("{0}/templates/{1}/{2}".format(
-                BASE, templates_dirs[section_number], templates[template_number]
+            html = open("{0}templates{1}{2}".format(
+                BASE, S + templates_dirs[section_number], S + templates[template_number]
             ), "r")
             html_body = html.read()
             html_body = placeholder_filler(html_body)
