@@ -21,12 +21,12 @@ misuse of this program.
 It is **illegal** to attempt at phishing someone **without their consent**. 
 
 ## Requirements ##
-- `pyAesCrypt==0.4.4`
+- `pyAesCrypt==0.4.4` [pyAesCrypt](https://pypi.org/project/pyAesCrypt/)
 
 ## Features ##
 
 - Email attachment(s)
-- Save your encrypted credentials for future use (pyAesCrypt)
+- Save your encrypted credentials for future use
 - A variety of **setups**; each setup is defined by a **subject** 
 and a specific **HTML email template**
 
